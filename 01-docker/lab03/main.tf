@@ -17,11 +17,11 @@ resource "docker_image" "app01_image" {
     path = "."
     tag  = ["app:1.0"]
   }
-  
+
   name = "app:1.0"
 }
 
-resource "docker_image" "ubuntu_image" { 
+resource "docker_image" "ubuntu_image" {
   name = "ubuntu:latest"
 }
 

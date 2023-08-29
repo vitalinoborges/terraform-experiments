@@ -21,11 +21,11 @@ resource "docker_image" "app01_image" {
     path = "."
     tag  = ["app:1.0"]
   }
-  
+
   name = "app:1.0"
 }
 
-resource "docker_image" "ubuntu_image" { 
+resource "docker_image" "ubuntu_image" {
   name = "ubuntu:latest"
 }
 
@@ -40,7 +40,7 @@ resource "docker_container" "app01_container" {
     external = "808${count.index}"
   }
 
-  networks = [ "${docker_network.private_network.name}" ]
+  networks = ["${docker_network.private_network.name}"]
 }
 
 resource "docker_container" "ubuntu_image" {

@@ -160,9 +160,9 @@ output "name" {
 
 terraform {
   backend "s3" {
-    bucket         = "terraform-state-feijao-com-arroz"
-    key            = "global/s3/lab.tfstate"
-    region         = "us-east-1"    # Replace this with your DynamoDB table name!
+    bucket = "terraform-state-feijao-com-arroz"
+    key    = "global/s3/lab.tfstate"
+    region = "us-east-1" # Replace this with your DynamoDB table name!
     #dynamodb_table = "terraform-state-feijao-com-arroz"
     #encrypt        = true
   }

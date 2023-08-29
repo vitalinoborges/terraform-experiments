@@ -43,7 +43,7 @@ resource "docker_container" "app01_container" {
   volumes {
     container_path = "/var/www/html/"
     read_only      = false
-    host_path      = "${path.cwd}"
+    host_path      = path.cwd
   }
 
 }

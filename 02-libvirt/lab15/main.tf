@@ -80,7 +80,7 @@ resource "libvirt_domain" "domain-debian" {
       #host        = libvirt_domain.domain-debian.network_interface[0].addresses[0]
       host        = "192.168.200.200"
       private_key = file("~/.ssh/id_rsa")
-      timeout = "2m"
+      timeout     = "2m"
     }
   }
 

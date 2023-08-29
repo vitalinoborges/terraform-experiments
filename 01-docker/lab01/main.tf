@@ -17,7 +17,7 @@ resource "docker_image" "app01_image" {
     path = "."
     tag  = ["app:1.0"]
   }
-  
+
   name = "app:1.0"
 }
 

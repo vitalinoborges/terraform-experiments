@@ -27,8 +27,8 @@ data "template_file" "meta_data" {
 }
 
 resource "libvirt_cloudinit_disk" "commoninit" {
-  name        = "cloudinit.iso"
-  user_data   = data.template_file.user_data.rendered
+  name      = "cloudinit.iso"
+  user_data = data.template_file.user_data.rendered
   meta_data = data.template_file.meta_data.rendered
 }
 

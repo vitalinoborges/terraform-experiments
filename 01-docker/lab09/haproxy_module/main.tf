@@ -12,7 +12,7 @@ provider "docker" {
 }
 
 locals {
-  directory_files = "${path.cwd}"
+  directory_files = path.cwd
 }
 
 locals {
@@ -49,7 +49,7 @@ resource "docker_container" "app01_container" {
   volumes {
     container_path = "/var/www/html/"
     read_only      = false
-    host_path      = "${local.directory_files}"
+    host_path      = local.directory_files
   }
 
 }
