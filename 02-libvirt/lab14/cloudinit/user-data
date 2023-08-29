@@ -1,0 +1,23 @@
+#cloud-config
+# vim: syntax=yaml
+
+users:
+  - name: root
+    ssh_authorized_keys:
+       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3avgvTN0rADGURFGanh71qYN7lZ1JgwJltIf2e2pLMd673drBCg6TgAUhTJCdIKcxnhkHKyoaEpqPO9+4cM7QwI5IrJ91+AEzT4VRFmNo8QipgI5YmALXye/1ZKFH9w+RCvXvw7Kr0EjOrYeIJb2WP/mu1aLTuBgeKcDGsz67Y4YK3IRJwljHcJv3bZtsQu3hhjAvwQdCy9z4ZcTzfzGHy+wBAa5i9pBac/yVbtjBImjYUDj/t43ce+E7wFhDaCwozcSFLcc2H/doaAqv+WnaLFAN2ry85b6+zq5sFtFoPEEUhblD1rw8Ob0WghGR0ISDxCMn07NgLS2MnS8K43qI7ODZVZSEudp3QVdTTTPxsGo1lFivv5tpKpFxZx30BmZDr9lOMtPjUHSUHEqU/CUPsPVqZXnZPRuLM/bXiI2WaMFNKzfNeLQbjkA+IeyPk1Nab5ExDuu+c/R6dGuotFubc9R7tXpXY8TkwGQOOv7XaaspM99Rkv2tdjqF4Ho6D+E= ovb100298@OPENCO-TECH-1111
+
+ssh_pwauth: True
+chpasswd:
+  list: |
+     root:linux
+  expire: False
+disable_root: false
+
+growpart:
+  mode: auto
+  devices: ['/']
+
+runcmd:
+ - sed  -i '/PermitRootLogin/s/.*/PermitRootLogin yes/' /etc/ssh/sshd_config 
+ - systemctl restart sshd
+
