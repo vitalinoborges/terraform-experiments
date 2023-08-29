@@ -1,3 +1,5 @@
+Experimentos práticos para aprender o "Feijão com Arroz" de Terraform:
+
 Feijão com o Arroz #1:
  - Subir 1 container Docker
  - e destruí-lo
@@ -126,15 +128,16 @@ Feijão com o Arroz #27:
 
 
 
-Anotações
+## Anotações
+
 Links:
-https://github.com/dmacvicar/terraform-provider-libvirt
-https://github.com/dmacvicar/terraform-provider-libvirt/blob/main/examples/v0.13/ubuntu/ubuntu-example.tf
-https://sumit-ghosh.com/articles/create-vm-using-libvirt-cloud-images-cloud-init/
-https://docs.openstack.org/image-guide/ubuntu-image.html
-https://blog.ruanbekker.com/blog/2020/10/08/using-the-libvirt-provisioner-with-terraform-for-kvm/
+* https://github.com/dmacvicar/terraform-provider-libvirt
+* https://github.com/dmacvicar/terraform-provider-libvirt/blob/main/examples/v0.13/ubuntu/ubuntu-example.tf
+* https://sumit-ghosh.com/articles/create-vm-using-libvirt-cloud-images-cloud-init/
+* https://docs.openstack.org/image-guide/ubuntu-image.html
+* https://blog.ruanbekker.com/blog/2020/10/08/using-the-libvirt-provisioner-with-terraform-for-kvm/
 
-
+```bash
 sudo wget -O /var/lib/libvirt/boot/debian-mini.iso \
   https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.3.0-amd64-netinst.iso
 
@@ -173,3 +176,4 @@ virt-install \
 
 virsh net-list
 virsh net-dhcp-leases default
+```
